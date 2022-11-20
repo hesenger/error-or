@@ -34,9 +34,9 @@ public record struct ErrorOr<TValue> : IErrorOr
     /// <summary>
     /// Creates an <see cref="ErrorOr{TValue}"/> from a list of errors.
     /// </summary>
-    public static ErrorOr<TValue> From(List<Error> errors)
+    public static ErrorOr<TValue> From(IEnumerable<Error> errors)
     {
-        return errors;
+        return errors.ToList();
     }
 
     /// <summary>
